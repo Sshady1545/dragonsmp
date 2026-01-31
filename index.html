@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragonSMP | Official</title>
+    <!-- Favicon (Sekme Logosu) -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <!-- Fontlar -->
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Üst Sekme / Navbar (Donut SMP Tarzı) -->
+    <header class="top-nav anim-fade-down">
+        <div class="nav-content">
+            <div class="nav-left">
+                <img src="logo.png" alt="Logo" class="nav-logo-img">
+                <span class="nav-title">DragonSMP <span class="sep">|</span> <span class="sub">Official</span></span>
+            </div>
+            <div class="nav-right">
+                <div class="online-status">
+                    <span class="status-dot"></span>
+                    <span id="player-count">SUNUCU AKTİF</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <!-- ANA LOGO KARTI -->
+        <div class="left-column anim-slide-right">
+            <div class="card logo-card">
+                <img src="logo.png" alt="DragonSMP" class="main-dragon-logo">
+            </div>
+            <div class="ip-container" id="copy-ip">
+                <i class="fa-regular fa-copy"></i>
+                <span class="ip-text">DRAGONSMP.SHOCK.GG</span>
+            </div>
+        </div>
+
+        <!-- STORE -->
+        <div class="card store-card coming-soon-btn anim-slide-up" style="animation-delay: 0.1s;">
+            <div class="overlay">
+                <h2>Store</h2>
+                <p>Marketten alışveriş yapın.</p>
+            </div>
+            <img src="store.png" class="card-bg-img">
+        </div>
+
+        <!-- SOSYAL MEDYA -->
+        <div class="card social-card anim-slide-up" style="animation-delay: 0.2s;">
+            <a href="https://youtube.com/@Sshady1545" target="_blank" class="social-box yt">
+                <i class="fab fa-youtube"></i>
+                <div class="info">
+                    <strong>4,000+</strong>
+                    <span>Abone</span>
+                </div>
+            </a>
+            <a href="https://discord.gg/JUj7SHGdF6" target="_blank" class="social-box dc">
+                <i class="fab fa-discord"></i>
+                <div class="info">
+                    <strong>1,000+</strong>
+                    <span>Discord</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- STATS -->
+        <div class="card stats-card coming-soon-btn anim-slide-up" style="animation-delay: 0.3s;">
+            <div class="overlay">
+                <h2>Stats</h2>
+                <p>Oyuncu istatistikleri.</p>
+            </div>
+            <img src="stats.jpg" class="card-bg-img">
+        </div>
+
+        <!-- NASIL GİRİLİR (Genişletildi ve Düzenlendi) -->
+        <div class="card join-card anim-slide-up" style="animation-delay: 0.4s;">
+            <div class="join-header">
+                <i class="fa-solid fa-gamepad"></i>
+                <h3>SUNUCUYA NASIL KATILIRIM?</h3>
+            </div>
+            <div class="mc-box-container">
+                <div class="mc-field">
+                    <label>SUNUCU ADI</label>
+                    <div class="mc-input-box">
+                        <span class="mc-font">Dragon SMP</span><span class="cursor">_</span>
+                    </div>
+                </div>
+                <div class="mc-field">
+                    <label>SUNUCU ADRESİ</label>
+                    <div class="mc-input-box clickable-ip" id="copy-ip-2">
+                        <span class="mc-font small-text">dragonsmp.shock.gg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- TOAST BİLDİRİM -->
+    <div id="toast" class="hidden">
+        <div class="toast-content">
+            <i class="fa-solid fa-check-circle"></i>
+            <span id="toast-msg">Kopyalandı!</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

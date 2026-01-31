@@ -1,0 +1,196 @@
+/* TEMEL AYARLAR */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: #050505;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 100px; /* Üst bar için boşluk */
+    overflow-x: hidden;
+}
+
+/* ÜST SEKME / NAVBAR */
+.top-nav {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    height: 75px;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-content {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left { display: flex; align-items: center; gap: 15px; }
+
+.nav-logo-img {
+    height: 50px; /* Üstteki logo büyütüldü */
+    filter: drop-shadow(0 0 8px rgba(255, 26, 26, 0.5));
+}
+
+.nav-title { font-weight: 900; font-size: 1.2rem; letter-spacing: -0.5px; }
+.nav-title .sep { color: #333; margin: 0 5px; }
+.nav-title .sub { color: #888; font-weight: 400; }
+
+.online-status {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+.status-dot { width: 8px; height: 8px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 10px #00ff00; }
+
+/* GRID YAPISI */
+.main-container {
+    display: grid;
+    grid-template-columns: 320px 420px 320px;
+    grid-template-rows: 280px 320px; /* Alt sıra biraz daha yüksek */
+    gap: 25px;
+    max-width: 1200px;
+    width: 95%;
+    padding-bottom: 50px;
+}
+
+/* KARTLAR */
+.card {
+    background: #0f0f0f;
+    border-radius: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: rgba(255, 26, 26, 0.4);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+/* ANA LOGO KARTI */
+.left-column { 
+    grid-row: span 2; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+}
+
+.logo-card {
+    background: linear-gradient(145deg, #ff1a1a, #600000);
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-dragon-logo {
+    width: 85%; /* Logo kartın içinde büyütüldü */
+    height: auto;
+    /* Siyah Stroke (Kontur) Efekti */
+    filter: 
+        drop-shadow(3px 0 0 #000) 
+        drop-shadow(-3px 0 0 #000)
+        drop-shadow(0 3px 0 #000)
+        drop-shadow(0 -3px 0 #000)
+        drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+}
+
+.ip-container {
+    background: #111;
+    padding: 22px;
+    border-radius: 24px;
+    text-align: center;
+    font-weight: 900;
+    border: 2px solid #222;
+    transition: 0.3s;
+}
+.ip-container:hover { border-color: #ff1a1a; background: #1a1a1a; }
+
+/* RESİMLİ KARTLAR */
+.card-bg-img {
+    width: 100%; height: 100%; object-fit: cover;
+    opacity: 0.3; position: absolute; top: 0; left: 0;
+    transition: 0.6s;
+}
+.card:hover .card-bg-img { opacity: 0.5; transform: scale(1.1); }
+
+.overlay { position: relative; z-index: 2; padding: 40px; }
+.overlay h2 { font-size: 2.8rem; font-weight: 900; }
+.overlay p { color: #aaa; font-weight: 600; margin-top: 5px; }
+
+/* SOSYAL MEDYA */
+.social-card { display: flex; flex-direction: column; justify-content: center; padding: 40px; gap: 35px; }
+.social-box { display: flex; align-items: center; gap: 20px; text-decoration: none; color: white; transition: 0.3s; }
+.social-box i { font-size: 2.8rem; }
+.yt i { color: #ff0000; }
+.dc i { color: #5865f2; }
+.info strong { font-size: 1.5rem; display: block; }
+.info span { font-size: 0.8rem; color: #666; font-weight: 800; text-transform: uppercase; }
+
+/* NASIL GİRİLİR - FERAH TASARIM */
+.join-card {
+    background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('join-bg.jpg');
+    background-size: cover;
+    padding: 40px;
+}
+.join-header { display: flex; align-items: center; gap: 12px; margin-bottom: 25px; }
+.join-header i { color: #ff1a1a; font-size: 1.4rem; }
+.join-header h3 { font-size: 1.2rem; font-weight: 900; letter-spacing: 1px; }
+
+.mc-box-container { display: flex; flex-direction: column; gap: 18px; }
+.mc-field label { font-size: 0.65rem; font-weight: 900; color: #555; letter-spacing: 2px; display: block; margin-bottom: 6px; }
+
+.mc-input-box {
+    background: #000;
+    padding: 18px 22px;
+    border: 2px solid #222;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
+}
+.clickable-ip:hover { border-color: #ff1a1a; cursor: pointer; }
+
+.mc-font { font-family: 'Silkscreen'; font-size: 1rem; text-shadow: 2px 2px #000; }
+.cursor { color: #ff1a1a; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ANIMASYONLAR */
+.anim-fade-down { animation: fadeDown 0.8s ease-out forwards; }
+.anim-slide-right { animation: slideRight 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards; }
+.anim-slide-up { opacity: 0; animation: slideUp 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards; }
+
+@keyframes fadeDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+@keyframes slideRight { from { transform: translateX(-50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+/* TOAST */
+#toast {
+    position: fixed; bottom: 40px; background: #fff; color: #000;
+    padding: 14px 30px; border-radius: 100px; z-index: 2000; font-weight: 900;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4); transition: 0.5s;
+}
+.hidden { bottom: -100px !important; opacity: 0; }
+
+/* MOBİL */
+@media (max-width: 1050px) {
+    .main-container { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .left-column { grid-row: auto; }
+}
